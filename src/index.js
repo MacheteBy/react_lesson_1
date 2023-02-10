@@ -1,23 +1,29 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import {Header} from './App';
+import { Button } from './App';
+import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import BootstrapTest from './BootstrapTest';
 
 
-const text = 'Привет мир!';
 
-const elem = (
-  <div>
-    <h2 className='text'>Текст: {text}</h2>
-    <input type="text" />
-    <label htmlFor="">123</label>
-    <button tabIndex="0">click</button>
-  </div>
-);
-// const  elem = React.createElement('h2', {className: 'green'}, 'Hello World!');
+const BigButton = styled(Button)`
+  color: red;
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+`
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  elem
+  <StrictMode>
+    <App/>
+    <BigButton as="a">Send...</BigButton>
+    <BootstrapTest/>  
+  </StrictMode>,
 );
 
